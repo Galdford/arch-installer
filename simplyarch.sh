@@ -117,7 +117,6 @@ then
             mount -o noatime,compress=zstd,space_cache,subvol=@ $rootPart /mnt
             # You need to manually create folder to mount the other subvolumes at
             mkdir /mnt/{boot,home,var,opt,tmp,.snapshots}
-
             mount -o noatime,compress=zstd,space_cache,subvol=@home $rootPart /mnt/home
 
             mount -o noatime,compress=zstd,space_cache,subvol=@opt $rootPart /mnt/opt
@@ -180,9 +179,9 @@ then
 	# Install base system
 	if [[ -d /sys/firmware/efi ]]
 	then
-		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub efibootmgr os-prober bash-completion sudo nano vim networkmanager ntfs-3g neofetch htop git reflector xdg-user-dirs e2fsprogs man-db intel-ucode
+		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub efibootmgr os-prober bash-completion sudo nano vim networkmanager ntfs-3g neofetch htop git reflector xdg-user-dirs e2fsprogs man-db intel-ucode boot-btrfs
 	else
-		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub os-prober bash-completion sudo nano vim networkmanager ntfs-3g neofetch htop git reflector xdg-user-dirs e2fsprogs man-db intel-ucode
+		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub os-prober bash-completion sudo nano vim networkmanager ntfs-3g neofetch htop git reflector xdg-user-dirs e2fsprogs man-db intel-ucode grub-btrfs
 	fi
 	# fstab
 	genfstab -U /mnt >> /mnt/etc/fstab
