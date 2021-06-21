@@ -211,7 +211,7 @@ then
 	then
 		arch-chroot /mnt /bin/bash -c "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch"
 	else
-		arch-chroot /mnt /bin/bash -c "grub-install $rootPart"
+		arch-chroot /mnt /bin/bash -c "grub-install ${rootPart::-1}"
 	fi
 	arch-chroot /mnt /bin/bash -c "grub-mkconfig -o /boot/grub/grub.cfg"
 	# networkmanager
