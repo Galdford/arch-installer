@@ -117,16 +117,15 @@ then
             mount -o noatime,compress=zstd,space_cache,subvol=@ $rootPart /mnt
             # You need to manually create folder to mount the other subvolumes at
             mkdir /mnt/{boot,home,var,opt,tmp,.snapshots}
-            mount -o noatime,compress=zstd,space_cache,subvol=@home $rootPart /mnt/home
+            mount -o noatime,compress=zstd,space_cache,autodefrag,subvol=@home $rootPart /mnt/home
 
-            mount -o noatime,compress=zstd,space_cache,subvol=@opt $rootPart /mnt/opt
+            mount -o noatime,compress=zstd,space_cache,autodefrag,subvol=@opt $rootPart /mnt/opt
 
-            mount -o noatime,compress=zstd,space_cache,subvol=@tmp $rootPart /mnt/tmp
+            mount -o noatime,compress=zstd,space_cache,autodefrag,subvol=@tmp $rootPart /mnt/tmp
 
-            mount -o noatime,compress=zstd,space_cache,subvol=@.snapshots $rootPart /mnt/.snapshots
+            mount -o noatime,compress=zstd,space_cache,autodefrag,subvol=@.snapshots $rootPart /mnt/.snapshots
 
-            mount -o noatime,compress=zstd,space_cache,subvol=@var $rootPart /mnt/var
-			mkdir /mnt/boot
+            mount -o noatime,compress=zstd,space_cache,autodefrag,subvol=@var $rootPart /mnt/var
 			;;
 	esac
 	clear
