@@ -178,7 +178,7 @@ then
 	# Install base system
 	if [[ -d /sys/firmware/efi ]]
 	then
-		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub efibootmgr os-prober bash-completion sudo nano networkmanager ntfs-3g neofetch git reflector xdg-user-dirs e2fsprogs man-db intel-ucode boot-btrfs wpa_supplicant xf86-input-synaptics dhcpcd dialog
+		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub efibootmgr os-prober bash-completion sudo nano networkmanager ntfs-3g neofetch git reflector xdg-user-dirs e2fsprogs man-db intel-ucode grub-btrfs wpa_supplicant xf86-input-synaptics dhcpcd dialog
 	else
 		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub os-prober bash-completion sudo nano networkmanager ntfs-3g neofetch git reflector xdg-user-dirs e2fsprogs man-db intel-ucode grub-btrfs wpa_supplicant xf86-input-synaptics dhcpcd dialog
 	fi
