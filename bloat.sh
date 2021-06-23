@@ -55,7 +55,7 @@ case $desktop in
         ;;
 esac
 # install packages accordingly
-arch-chroot /mnt /bin/bash -c "pacman -Sy $DEpkg firefox pipewire pipewire-{alsa,jack,media-session,pulse} --noconfirm --needed"
+arch-chroot /mnt /bin/bash -c "pacman -Sy $DEpkg firefox wpa_supplicant xf86-input-synaptics dhcpcd dialog acpid ntp dbus cups cronie pipewire pipewire-{alsa,jack,media-session,pulse} --noconfirm --needed"
 # enable DM accordingly
 case $desktop in
     1)
