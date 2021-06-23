@@ -60,24 +60,45 @@ arch-chroot /mnt /bin/bash -c "pacman -Sy $DEpkg firefox wpa_supplicant xf86-inp
 case $desktop in
     1)
         arch-chroot /mnt /bin/bash -c "systemctl enable gdm.service"
+        arch-chroot /mnt /bin/bash -c "systemctl enable acpid"
+        arch-chroot /mnt /bin/bash -c "systemctl enable ntpd"
+        arch-chroot /mnt /bin/bash -c "systemctl enable cups"
         ;;
     2)
         arch-chroot /mnt /bin/bash -c "systemctl enable gdm.service"
+        arch-chroot /mnt /bin/bash -c "systemctl enable acpid"
+        arch-chroot /mnt /bin/bash -c "systemctl enable ntpd"
+        arch-chroot /mnt /bin/bash -c "systemctl enable cups"
         ;;
     3)
         arch-chroot /mnt /bin/bash -c "systemctl enable sddm.service"
+        arch-chroot /mnt /bin/bash -c "systemctl enable acpid"
+        arch-chroot /mnt /bin/bash -c "systemctl enable ntpd"
+        arch-chroot /mnt /bin/bash -c "systemctl enable cups"
         ;;
     4)
         arch-chroot /mnt /bin/bash -c "systemctl enable lxdm.service"
+        arch-chroot /mnt /bin/bash -c "systemctl enable acpid"
+        arch-chroot /mnt /bin/bash -c "systemctl enable ntpd"
+        arch-chroot /mnt /bin/bash -c "systemctl enable cups"
         ;;
     5)
         arch-chroot /mnt /bin/bash -c "systemctl enable sddm.service"
+        arch-chroot /mnt /bin/bash -c "systemctl enable acpid"
+        arch-chroot /mnt /bin/bash -c "systemctl enable ntpd"
+        arch-chroot /mnt /bin/bash -c "systemctl enable cups"
         ;;
     6)
         arch-chroot /mnt /bin/bash -c "systemctl enable lxdm.service"
+        arch-chroot /mnt /bin/bash -c "systemctl enable acpid"
+        arch-chroot /mnt /bin/bash -c "systemctl enable ntpd"
+        arch-chroot /mnt /bin/bash -c "systemctl enable cups"
         ;;
     7)
         arch-chroot /mnt /bin/bash -c "systemctl enable lxdm.service"
+        arch-chroot /mnt /bin/bash -c "systemctl enable acpid"
+        arch-chroot /mnt /bin/bash -c "systemctl enable ntpd"
+        arch-chroot /mnt /bin/bash -c "systemctl enable cups"
         ;;
 esac
 # auto-install VM drivers
