@@ -123,7 +123,7 @@ then
 
             mount -o noatime,compress=zstd,space_cache,autodefrag,subvol=@tmp $rootPart /mnt/tmp
 
-            mount -o noatime,compress=zstd,space_cache,autodefrag,subvol=@.snapshots $rootPart /mnt/.snapshots
+            mount -o noatime,compress=zstd,space_cache,autodefrag,subvol=@snapshots $rootPart /mnt/.snapshots
 
             mount -o noatime,compress=zstd,space_cache,autodefrag,subvol=@var $rootPart /mnt/var
 			;;
@@ -178,9 +178,9 @@ then
 	# Install base system
 	if [[ -d /sys/firmware/efi ]]
 	then
-		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub efibootmgr os-prober bash-completion sudo nano networkmanager ntfs-3g neofetch git reflector xdg-user-dirs e2fsprogs man-db intel-ucode grub-btrfs wpa_supplicant xf86-input-synaptics dhcpcd dialog
+		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub efibootmgr os-prober bash-completion sudo nano networkmanager ntfs-3g neofetch git reflector xdg-user-dirs e2fsprogs man-db intel-ucode grub-btrfs
 	else
-		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub os-prober bash-completion sudo nano networkmanager ntfs-3g neofetch git reflector xdg-user-dirs e2fsprogs man-db intel-ucode grub-btrfs wpa_supplicant xf86-input-synaptics dhcpcd dialog
+		pacstrap /mnt base base-devel linux-zen linux-firmware linux-zen-headers grub os-prober bash-completion sudo nano networkmanager ntfs-3g neofetch git reflector xdg-user-dirs e2fsprogs man-db intel-ucode grub-btrfs
 	fi
 	# fstab
 	genfstab -U /mnt >> /mnt/etc/fstab
