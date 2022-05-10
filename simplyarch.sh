@@ -32,7 +32,7 @@ then
 	read -p "Locale: " locale
 	if [[ -z "$locale" ]]
 	then
-		locale="en_US"
+		locale="es_CL"
 	fi
 	clear
 	# Ask account
