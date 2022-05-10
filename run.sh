@@ -8,7 +8,7 @@ echo "SimplyArch bootstrapper..."
 echo
 pacman -Sy glibc --noconfirm
 pacman -S git --noconfirm
-git clone https://github.com/geminis3/simplyarch
-cd simplyarch
+git clone https://github.com/Galdford/arch-installer
+cd arch-installer
 chmod +x simplyarch.sh
 ./simplyarch.sh
